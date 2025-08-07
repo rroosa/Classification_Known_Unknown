@@ -1,0 +1,74 @@
+{
+    "project": "known_unknown_classes",
+    "description": "Configuration file for open-set testing",
+    "src_dataset_known": "MNIST",
+    "known_photos_folder": "MNIST_photos",
+    "known_classes_name": [
+        "2 - two",
+        "4 - four",
+        "6 - six",
+        "8 - eight"
+    ],
+    "known_assign_place": {
+        "0": 0,
+        "1": 1,
+        "2": 2,
+        "3": 3
+    },
+    "src_dataset_unknown": "MNIST",
+    "unknown_photos_folder": "MNIST_photos",
+    "unknown_classes_name": [
+        "1 - one",
+        "3 - three",
+        "5 - five"
+    ],
+    "reciprocal_pattern_folder": "Mnist_patterns",
+    "pattern_experiment": "pattern_experiment_[1]",
+    "reciprocal_classes_name": [
+        "reciprocal_all"
+    ],
+    "reciprocal_assign_place": {
+        "0": 4
+    },
+    "idx_reciprocal_class": [
+        4
+    ],
+    "legend_for_plot": {
+        "0": "2 - two",
+        "1": "4 - four",
+        "2": "6 - six",
+        "3": "8 - eight",
+        "4": "neutral",
+        "5": "unknown"
+    },
+    "legend_for_matrix": [
+        "2 - two",
+        "4 - four",
+        "6 - six",
+        "8 - eight",
+        "neutral",
+        "unknown"
+    ],
+    "ref_experiment": {
+        "exp_num": "experiment_[1]",
+        "src_dataset": "MNIST",
+        "model_type": "Net",
+        "architecture_obj": "Net_MNIST",
+        "pretrained": false,
+        "balanced": true,
+        "batch_size": 32,
+        "task_classification": {
+            "num_known_classes": 4,
+            "num_reciprocal_classes": 1,
+            "type": "known_reciprocal"
+        },
+        "filename_model": "model_experiment_[1].pth",
+        "root_results_folder": "Results_dataset_known_pattern"
+    },
+    "task_classification": {
+        "type": "open_set_testing",
+        "num_known_classes": 4,
+        "num_reciprocal_classes": 1,
+        "num_unknown_classes": 3
+    }
+}
