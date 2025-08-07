@@ -1,0 +1,146 @@
+# NEAT configuration for the fixed-length bit-sequence memory experiment.
+
+# The `NEAT` section specifies parameters particular to the NEAT algorithm
+# or the experiment itself.  This is the only required section.
+[NEAT]
+fitness_criterion     = max
+fitness_threshold     = 0.999
+pop_size              = 200
+#Numero di individui in ogni generazione. prima 200 !!!!!!!!!!!!!!!!!!!!!!!
+reset_on_extinction   = False 
+#reset_on_extinction -> Se questo valore è True, quando tutte le specie si estinguono simultaneamente a causa della stagnazione, verrà creata una nuova popolazione casuale
+
+# no_fitness_termination default False, cioè appena si raggiunge la soglia il processo termina.
+# se è True allora continua fino a esaurire tutte le generazioni
+
+[DefaultGenome]
+# node activation options
+activation_default      = sigmoid 
+# sigmoid risulta migliore rispetta a gaussiana
+activation_mutate_rate  = 0.1  
+#activation_mutate_rate = 0.0
+activation_options      =  sigmoid 
+#activation_options     = gauss sigmoid 
+
+# node aggregation options
+aggregation_default     = sum
+aggregation_mutate_rate = 0.2
+#aggregation_mutate_rate = 0.0
+aggregation_options     = sum
+
+# node bias options
+# media e dev_std dellla funzione gaussiana
+bias_init_mean          = 0.0
+bias_init_stdev         = 1.0
+bias_max_value          = 30.0
+bias_min_value          = -30.0
+bias_mutate_power       = 0.5
+bias_mutate_rate        = 0.8
+#prima 0.7
+bias_replace_rate       = 0.1
+
+# genome compatibility options
+compatibility_disjoint_coefficient = 2.0
+#prima 1.0
+compatibility_weight_coefficient   = 0.4
+#prima 0.5 
+# connection add/remove rates
+conn_add_prob           = 0.5
+conn_delete_prob        = 0.3
+# prima 0.5 
+
+# connection enable options
+enabled_default         = True
+# con il nuovo genoma vengon create nuove connessioni
+#Le "connessioni appena create" includono quelle nei genomi appena creati, se questi hanno connessioni iniziali (dall'impostazione della variabile initial_connection ).
+enabled_mutate_rate     = 0.1
+#prima 0.1
+#si riferisce alla probabilità che lo stato di abilitazione/disabilitazione di una connessione nel genoma della rete neurale possa cambiare durante una mutazione.
+
+feed_forward            = True
+# feed_forward= True ; alle reti generate non sarà consentito avere connessioni ricorrenti
+initial_connection      = full_nodirect 
+#
+# full_nodirect vuol dire connessione input->hidden->output PRIMA C'ERA QUESTO !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+#initial_connection     = full
+
+# node add/remove rates
+node_add_prob           = 0.2
+
+#La probabilità che la mutazione aggiunga un nuovo nodo
+#node_add_prob          = 0.2
+node_delete_prob        = 0.2
+#La probabilità che la mutazione elimini un nodo esistente (e tutte le connessioni ad esso)
+
+# network parameters
+num_hidden              = 2
+#num_hidden             = 0
+#Numero di nodi nascosti da aggiungere a ciascun genoma nella popolazione iniziale
+num_inputs              = 2
+num_outputs             = 1
+
+
+# node response options
+# di default se non specificato response_init_type  è inizializzata a gaussian   
+response_init_mean      = 1.0
+response_init_stdev     = 0.0
+response_max_value      = 30.0
+response_min_value      = -30.0
+response_mutate_power   = 0.0
+response_mutate_rate    = 0.1
+#prima 0.0 
+response_replace_rate   = 0.0
+
+# connection weight options
+# weight_init_type di default è gaussian
+weight_init_mean        = 0.0
+weight_init_stdev       = 1.0
+weight_max_value        = 30
+weight_min_value        = -30
+weight_mutate_power     = 0.5
+#weight_mutate_power -> Deviazione standard della distribuzione normale/gaussiana centrata sullo zero da cui viene estratta una mutazione del valore del peso 
+weight_mutate_rate      = 0.8
+# prima 0.8 , provato anche con 0.9
+# weight_mutate_rate -> La probabilità che una mutazione modifichi il peso di una connessione aggiungendo un valore casuale.
+weight_replace_rate     = 0.1
+# prima 0.1, provato anche con 0.2
+# weight_replace_rate  -> La probabilità che la mutazione sostituisca il peso di una connessione con un nuovo chosen valore casuale (come se fosse una nuova connessione).
+
+[DefaultSpeciesSet]
+compatibility_threshold = 3.5
+# prima 3.0
+#Gli individui la cui distanza genomica è inferiore a questa soglia sono considerati appartenenti alla stessa specie .
+# maggiore è la soglia , vuol dire che è più difficile che gli individui possano appartenere alla stessa specie, dunque verrano create  più specie diverse
+[DefaultStagnation]
+species_fitness_func = max
+#La funzione utilizzata per calcolare l'idoneità(fitness) della specie.
+#max_stagnation       = 20
+# Le specie che non hanno mostrato miglioramenti per più di questo numero di generazioni saranno considerate stagnanti e rimosse.
+
+max_stagnation = 8  
+# Dopo 8 generazioni senza miglioramenti, la specie viene eliminata
+# prima 20
+#species_fitness_max_stagnation = 8  
+# Anche la fitness stagnante forza l'estinzione
+# aggiiunto 
+species_elitism      = 2
+
+#species_elitism  -> Il numero di specie che saranno protette dalla stagnazione; 
+#principalmente inteso a prevenire estinzioni totali causate da 
+#tutte le specie che diventano stagnanti prima che sorgano nuove specie. 
+#Ad esempio, un'impostazione species_elitismdi 3 impedirà che le 3 specie 
+#con la più alta idoneità di specie vengano rimosse per stagnazione indipendentemente dalla quantità di tempo in cui non hanno mostrato miglioramenti. Questo valore predefinito è 0.
+
+[DefaultReproduction]
+elitism            = 2
+# elitism -> Il numero di individui più adatti in ogni specie che saranno , # Numero di individui migliori da mantenere
+# conservati così come sono da una generazione all'altra. e non evolvono più
+survival_threshold = 0.4
+# prima 0.2 , 0.4
+# La frazione per ogni specie autorizzata a riprodursi ogni generazione.  
+#simulare il torneo aumentando il tasso di selezione dei migliori individui per specie.
+#In questo modo, solo il 50% degli individui migliori di ogni specie passa alla generazione successiva, simulando una selezione per torneo.
+
+
+# min_species_size = 2
+#Il numero minimo di genomi per specie dopo la riproduzione. Il valore predefinito è 2.
