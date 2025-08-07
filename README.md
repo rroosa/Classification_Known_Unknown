@@ -15,4 +15,17 @@ The t-SNE technique is used to visualize, in a three-dimensional space, the prob
 classification scenarios, both in the context of closed-set and open-set recognition.</p>
 
 <hr>
-<p> In the <b>REPORT</b> folder, there is a document that provides a description and instructions for the execution of the software system. </p>
+<p> <b>Technical Report.pdf</b> is a document that describes the software system and provides instructions for its execution. </p>
+<br>
+<b>Citation</b>
+<p>If you use any part of the code or experimental setup described in this work, please cite the following article:</p>
+<pre>
+@InProceedings{Zuccara_2025_CVPR,
+  author    = {Zuccar\`a, Rosa and Fargetta, Georgia and Ortis, Alessandro and Battiato, Sebastiano},
+  title     = {Exploiting Adversarial Learning and Topology Augmentation for Open-Set Visual Recognition},
+  booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR) Workshops},
+  month     = {June},
+  year      = {2025},
+  pages     = {3425-3433}
+}
+</pre>
