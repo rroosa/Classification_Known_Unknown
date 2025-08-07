@@ -510,7 +510,7 @@ class Pattern_Creator():
 
     
 
-        best_genoma = self.population.run(self.evaluate_fitness, 1)
+        best_genoma = self.population.run(self.evaluate_fitness, num_generation)
 
         print(f"BEST genoma - fitness {best_genoma.fitness}")
 
