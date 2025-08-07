@@ -1,4 +1,4 @@
-# Classification_Known_Unknown
+# Open-Set Visual Recognition
 
 This software system code was originally developed as part of the following scientific study:<br> 
 <p><b>Rosa Zuccarà, Georgia Fargetta, Alessandro Ortis, Sebastiano Battiato,</b> “Exploiting Adversarial Learning and Topology Augmentation for Open-Set Visual Recognition.” <b>Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR) Workshops,</b> 2025, pp. 3425-3433.</p>
