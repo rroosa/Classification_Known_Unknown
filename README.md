@@ -1,7 +1,7 @@
 # Open-Set Visual Recognition
 
 This software system code was originally developed as part of the following scientific study:<br> 
-<p><b>Rosa Zuccarà, Georgia Fargetta, Alessandro Ortis, Sebastiano Battiato,</b> “Exploiting Adversarial Learning and Topology Augmentation for Open-Set Visual Recognition.” <b>Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR) Workshops,</b> 2025, pp. 3425-3433.</p>
+<p><b>Rosa Zuccarà, Georgia Fargetta, Alessandro Ortis, Sebastiano Battiato,</b> "<a href="https://openaccess.thecvf.com/content/CVPR2025W/WiCV/papers/Zuccara_Exploiting_Adversarial_Learning_and_Topology_Augmentation_for_Open-Set_Visual_Recognition_CVPRW_2025_paper.pdf" style="color:black" target="_blank">Exploiting Adversarial Learning and Topology Augmentation for Open-Set Visual Recognition</a>". <b>Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR) Workshops,</b> 2025, pp. 3425-3433.</p>
 <hr>
 <p>This work aims to modify and enrich the feature space in which classes are represented, thereby improving the separability of known
 classes and enhance the model's robustness to out-of-distribution (OOD) inputs. The characteristic descriptor of a sample is defined as
@@ -18,7 +18,7 @@ classification scenarios, both in the context of closed-set and open-set recogni
 <p> <b>Technical Report.pdf</b> is a document that describes the software system and provides instructions for its execution. </p>
 <br>
 <b>Citation</b>
-<p>If you use any part of the code or experimental setup described in this work, please cite the following article:</p>
+<p>If you use any part of the code or experimental setup described in this work, please cite the following <a href="https://openaccess.thecvf.com/content/CVPR2025W/WiCV/html/Zuccara_Exploiting_Adversarial_Learning_and_Topology_Augmentation_for_Open-Set_Visual_Recognition_CVPRW_2025_paper.html" target="_blank" style="color:black">article</a>:</p>
 <pre>
 @InProceedings{Zuccara_2025_CVPR,
   author    = {Zuccar\`a, Rosa and Fargetta, Georgia and Ortis, Alessandro and Battiato, Sebastiano},
